@@ -5,26 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PowerFit Gym</title>
 <style>
+/* Navbar responsive fix */
+@media(max-width:900px){
+.navbar{
+  flex-direction:column;
+  align-items:flex-start;
+  padding:15px 5%;
+}
+.nav-links{
+  flex-direction:column;
+  gap:10px;
+  width:100%;
+  margin-top:10px;
+}
+.join-btn{
+  align-self:flex-end;
+  margin-top:10px;
+}
+}
 *{margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
 body{background:#0f0f0f; color:white; line-height:1.6;}
 
 /* Navbar */
-.navbar{display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:#111; position:sticky; top:0; z-index:100;}
+.navbar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; padding:20px 10%; background:#111; position:sticky; top:0; z-index:100;}
 .logo{color:#ff3c00; font-size:28px; font-weight:bold;}
-.nav-links{display:flex; list-style:none; gap:25px;}
+.nav-links{display:flex; flex-wrap:wrap; list-style:none; gap:15px;}
 .nav-links a{color:white; text-decoration:none; padding:6px 10px; border-radius:5px; transition:0.3s;}
 .nav-links a:hover{background:#ff3c00;}
 .join-btn{background:#ff3c00; border:none; padding:10px 22px; color:white; cursor:pointer; border-radius:5px; font-weight:bold; transition:0.3s;}
 .join-btn:hover{background:#e63b00;}
 
 /* Hero Section */
-.hero{position:relative; display:flex; align-items:flex-start; justify-content:flex-start; padding:80px 10%; min-height:90vh; overflow:hidden;}
+.hero{display:flex; flex-wrap:wrap; align-items:flex-start; padding:80px 10%; min-height:90vh; position:relative;}
 .hero-left{z-index:2; max-width:50%; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards;}
 .hero-left h1{font-size:48px; margin-bottom:20px;}
 .hero-left p{font-size:20px; margin-bottom:25px;}
 .hero-left button{padding:12px 28px; background:#ff3c00; border:none; color:white; border-radius:5px; font-weight:bold; cursor:pointer; transition:0.3s;}
 .hero-left button:hover{background:#e63b00;}
-.hero-right{position:absolute; top:0; right:0; width:50%; max-width:600px; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards 0.5s;}
+.hero-right{max-width:45%; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards 0.5s;}
 .hero-right img{width:100%; height:auto; display:block; border-radius:15px;}
 
 /* Sections */
@@ -60,9 +78,10 @@ footer a:hover{color:#ff3c00;}
 
 /* Responsive */
 @media(max-width:900px){
-.hero{flex-direction:column; align-items:center; text-align:center;}
-.hero-left{max-width:100%;}
-.hero-right{position:relative; width:100%; max-width:none; margin-top:30px;}
+.hero{flex-direction:column; align-items:center; text-align:center; padding:50px 5%;}
+.hero-left,.hero-right{max-width:100%;}
+.hero-right{margin-top:30px;}
+.nav-links{justify-content:center; gap:10px; margin-top:10px; width:100%;}
 }
 </style>
 </head>
@@ -80,11 +99,10 @@ footer a:hover{color:#ff3c00;}
 <button class="join-btn">Join Now</button>
 </nav>
 
-<!-- Hero Section -->
 <section class="hero">
 <div class="hero-left">
 <h1>Transform Your Body & Mind</h1>
-<p>Join PowerFit Gym for world-class equipment, expert trainers, and customized programs for all fitness levels. From weight training to yoga, achieve your goals with us.</p>
+<p>Join PowerFit Gym for world-class equipment, expert trainers, and customized programs for all fitness levels.</p>
 <button>Start Your Journey</button>
 </div>
 <div class="hero-right">
@@ -96,8 +114,8 @@ footer a:hover{color:#ff3c00;}
 <h2>Our Programs</h2>
 <div class="program-grid">
 <div class="card"><img src="gym2.jpg" alt=""><h3>Weight Training</h3><p>Build strength and muscle.</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a" alt=""><h3>Cardio Training</h3><p>Burn fat and improve stamina.</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" alt=""><h3>Yoga & Flexibility</h3><p>Enhance flexibility and balance.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?fit=crop&w=600&q=80" alt=""><h3>Cardio Training</h3><p>Burn fat and improve stamina.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?fit=crop&w=600&q=80" alt=""><h3>Yoga & Flexibility</h3><p>Enhance flexibility and balance.</p></div>
 <div class="card"><img src="gym3.jpg" alt=""><h3>Personal Training</h3><p>1-on-1 sessions with certified trainers.</p></div>
 </div>
 </section>
@@ -105,9 +123,9 @@ footer a:hover{color:#ff3c00;}
 <section class="trainers">
 <h2>Meet Our Trainers</h2>
 <div class="trainer-grid">
-<div class="trainer-card"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt=""><h3>Rahul Sharma</h3><p>Strength Coach</p></div>
-<div class="trainer-card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a" alt=""><h3>Amit Verma</h3><p>Fitness Trainer</p></div>
-<div class="trainer-card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" alt=""><h3>Priya Singh</h3><p>Yoga Expert</p></div>
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?fit=crop&w=600&q=80" alt=""><h3>Rahul Sharma</h3><p>Strength Coach</p></div>
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?fit=crop&w=600&q=80" alt=""><h3>Amit Verma</h3><p>Fitness Trainer</p></div>
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?fit=crop&w=600&q=80" alt=""><h3>Priya Singh</h3><p>Yoga Expert</p></div>
 </div>
 </section>
 
