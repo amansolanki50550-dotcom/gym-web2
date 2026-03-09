@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerFit Gym</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
+body{background:#0f0f0f; color:white; line-height:1.6;}
+
+/* Navbar */
+.navbar{display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:#111; position:sticky; top:0; z-index:100;}
+.logo{color:#ff3c00; font-size:28px; font-weight:bold;}
+.nav-links{display:flex; list-style:none; gap:25px;}
+.nav-links a{color:white; text-decoration:none; padding:6px 10px; border-radius:5px; transition:0.3s;}
+.nav-links a:hover{background:#ff3c00;}
+.join-btn{background:#ff3c00; border:none; padding:10px 22px; color:white; cursor:pointer; border-radius:5px; font-weight:bold; transition:0.3s;}
+.join-btn:hover{background:#e63b00;}
+
+/* Hero Section */
+.hero{position:relative; display:flex; align-items:flex-start; justify-content:flex-start; padding:80px 10%; min-height:90vh; overflow:hidden;}
+.hero-left{z-index:2; max-width:50%; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards;}
+.hero-left h1{font-size:48px; margin-bottom:20px;}
+.hero-left p{font-size:20px; margin-bottom:25px;}
+.hero-left button{padding:12px 28px; background:#ff3c00; border:none; color:white; border-radius:5px; font-weight:bold; cursor:pointer; transition:0.3s;}
+.hero-left button:hover{background:#e63b00;}
+.hero-right{position:absolute; top:0; right:0; width:50%; max-width:600px; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards 0.5s;}
+.hero-right img{width:100%; height:auto; display:block; border-radius:15px;}
+
+/* Sections */
+section{padding:80px 10%; text-align:center; opacity:0; transform:translateY(50px); transition:all 1s ease;}
+section.visible{opacity:1; transform:translateY(0);}
+.programs h2,.trainers h2,.pricing h2,.contact h2{font-size:36px; margin-bottom:40px; color:#ff3c00;}
+
+/* Cards */
+.program-grid,.trainer-grid,.price-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px;}
+.card,.trainer-card,.price-card{background:#1a1a1a; padding:30px; border-radius:10px; transition:0.3s; opacity:0; transform:translateY(50px);}
+.card img,.trainer-card img{width:100%; border-radius:10px; margin-bottom:15px;}
+.card:hover,.trainer-card:hover,.price-card:hover{transform:translateY(-10px); background:#222;}
+.price-card h1{font-size:32px; margin:15px 0;}
+.popular{background:#ff3c00; color:white;}
+.popular button{background:white;color:#ff3c00;font-weight:bold;}
+.popular button:hover{background:#eee;}
+
+/* Contact */
+.contact form{display:flex; flex-direction:column; gap:15px; max-width:500px; margin:auto;}
+input,textarea{padding:12px; border:none; border-radius:5px;}
+.contact button{background:#ff3c00; border:none; padding:12px; color:white; font-size:16px; cursor:pointer; border-radius:5px; font-weight:bold; transition:0.3s;}
+.contact button:hover{background:#e63b00;}
+
+/* Footer */
+footer{background:#111; padding:40px 10%; text-align:center; border-top:2px solid #ff3c00;}
+footer h3{color:#ff3c00; margin-bottom:20px;}
+footer p{margin-bottom:10px;}
+footer a{color:white; text-decoration:none; transition:0.3s;}
+footer a:hover{color:#ff3c00;}
+
+/* Animations */
+@keyframes fadeUp{0%{opacity:0; transform:translateY(50px);}100%{opacity:1; transform:translateY(0);}}
+
+/* Responsive */
+@media(max-width:900px){
+.hero{flex-direction:column; align-items:center; text-align:center;}
+.hero-left{max-width:100%;}
+.hero-right{position:relative; width:100%; max-width:none; margin-top:30px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<h1 class="logo">PowerFit</h1>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Programs</a></li>
+<li><a href="#">Trainers</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+<button class="join-btn">Join Now</button>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-left">
+<h1>Transform Your Body & Mind</h1>
+<p>Join PowerFit Gym for world-class equipment, expert trainers, and customized programs for all fitness levels. From weight training to yoga, achieve your goals with us.</p>
+<button>Start Your Journey</button>
+</div>
+<div class="hero-right">
+<img src="gym.jpg" alt="Gym Photo">
+</div>
+</section>
+
+<section class="programs">
+<h2>Our Programs</h2>
+<div class="program-grid">
+<div class="card"><img src="gym2.jpg" alt=""><h3>Weight Training</h3><p>Build strength and muscle.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a" alt=""><h3>Cardio Training</h3><p>Burn fat and improve stamina.</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" alt=""><h3>Yoga & Flexibility</h3><p>Enhance flexibility and balance.</p></div>
+<div class="card"><img src="gym3.jpg" alt=""><h3>Personal Training</h3><p>1-on-1 sessions with certified trainers.</p></div>
+</div>
+</section>
+
+<section class="trainers">
+<h2>Meet Our Trainers</h2>
+<div class="trainer-grid">
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" alt=""><h3>Rahul Sharma</h3><p>Strength Coach</p></div>
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a" alt=""><h3>Amit Verma</h3><p>Fitness Trainer</p></div>
+<div class="trainer-card"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" alt=""><h3>Priya Singh</h3><p>Yoga Expert</p></div>
+</div>
+</section>
+
+<section class="pricing">
+<h2>Membership Plans</h2>
+<div class="price-grid">
+<div class="price-card"><h3>Basic</h3><h1>₹999</h1><p>1 Month Access</p><button>Join Now</button></div>
+<div class="price-card popular"><h3>Standard</h3><h1>₹2499</h1><p>3 Months Access</p><button>Join Now</button></div>
+<div class="price-card"><h3>Premium</h3><h1>₹7999</h1><p>1 Year Access</p><button>Join Now</button></div>
+</div>
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+<form onsubmit="sendMessage(); return false;">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<footer>
+<h3>PowerFit Gym</h3>
+<p>Address: 123 Fitness Street, Mumbai, India</p>
+<p>Email: info@powerfit.com | Phone: +91 9876543210</p>
+<p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+<p>© 2026 PowerFit Gym. All rights reserved.</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section, .card, .trainer-card, .price-card, .hero-left, .hero-right");
+window.addEventListener("scroll", () => {
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+const trigger = window.innerHeight - 100;
+if(top < trigger){sec.classList.add("visible"); sec.style.opacity=1; sec.style.transform="translateY(0)";}
+});
+});
+function sendMessage(){alert("Your message has been sent successfully! We'll get back to you soon.");}
+</script>
+</body>
+</html>
