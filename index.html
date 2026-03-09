@@ -83,34 +83,7 @@ footer a:hover{color:#ff3c00;}
 .hero-right{margin-top:30px;}
 .nav-links{justify-content:center; gap:10px; margin-top:10px; width:100%;}
 }
-/* Hero & Program Grid always row style */
-@media(max-width:900px){
-/* Hero ko row me hi rakhen */
-.hero{flex-direction:row; align-items:flex-start; padding:40px 5%; overflow-x:auto;}
-.hero-left,.hero-right{max-width:50%; flex-shrink:0;} /* prevent shrinking */
-.hero-right{margin-top:0;}
 
-/* Program/Trainers/Pricing Grid horizontal scroll */
-.program-grid, .trainer-grid, .price-grid{
-  display:flex;
-  flex-wrap:nowrap; /* row style, no wrapping */
-  overflow-x:auto;
-  gap:20px;
-  padding-bottom:10px;
-}
-
-.program-grid .card, .trainer-grid .trainer-card, .price-grid .price-card{
-  min-width:220px; /* fix width to show scroll */
-  flex-shrink:0;
-}
-
-/* Navbar fix: keep row layout but wrap small */
-.navbar{
-  flex-wrap:nowrap;
-  justify-content:space-between;
-}
-.nav-links{flex-wrap:nowrap; overflow-x:auto; gap:15px;}
-}
 </style>
 </head>
 <body>
